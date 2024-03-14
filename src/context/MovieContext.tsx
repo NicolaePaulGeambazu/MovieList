@@ -16,7 +16,7 @@ const MovieContext = createContext<MovieContextType>({
 });
 
 const MOVIES_LIST_URL = 'https://api.themoviedb.org/3/discover/movie?page=1';
-const API_KEY = '8180508726020a0787e64ab1341fddcf';
+const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MTgwNTA4NzI2MDIwYTA3ODdlNjRhYjEzNDFmZGRjZiIsInN1YiI6IjY1ZjBlYWI0MGU0ZmM4MDE4NmNhM2IzMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WHmVe_rH15rgUZJP1A_Ih6536sbPI_iXDlEXOi1ZQ-g';
 
 interface MovieProviderProps {
   children: ReactNode;

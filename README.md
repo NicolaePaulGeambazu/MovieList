@@ -1,3 +1,9 @@
+# Figma
+https://www.figma.com/file/ClxD8I48tjfoE2MgxhXbCg/MovieWeb?type=design&node-id=0-1&mode=design&t=VXvhNeLDEzYt2NLl-0
+
+# Project URL
+https://movie-list-navy.vercel.app
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
