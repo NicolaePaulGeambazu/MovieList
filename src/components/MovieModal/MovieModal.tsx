@@ -9,7 +9,16 @@ import useDeviceType from '../../hooks/useDeviceType'
 import { MovieModalProps } from '../../types'
 
 const MovieModal = ({ movie, closeModal }: MovieModalProps) => {
-  const { deviceType } = useDeviceType()
+  const { deviceType } = useDeviceType();
+
+  const formatDate = (dateString: string): string => {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  }
+
   return (
     <ModalBackdrop onClick={closeModal}>
       <ModalContent onClick={(e) => e.stopPropagation()}>
@@ -23,7 +32,7 @@ const MovieModal = ({ movie, closeModal }: MovieModalProps) => {
           <div>
             <h2>{movie.title}</h2>
             <p>{movie.overview}</p>
-            <p>Release Date: {movie.release_date}</p>
+            <p>Release Date: {formatDate(movie.release_date)}</p>
           </div>
         </ContentContainer>
       </ModalContent>
