@@ -1,28 +1,45 @@
-import { ReactNode } from 'react';
-export interface MovieDetailsProps {
-    id: string;
-  }
-
-export interface Movie {
-    id: string;
-    title: string;
-    imdb_id: string;
-    poster_path?: string;
-    backdrop_path?: string;
+import { ReactNode } from 'react'
+export type MovieDetailsProps = {
+  id: string
 }
 
-  
-export  interface MovieContextType {
-    moviesData: Movie[] | undefined;
-    isLoadingMovies: boolean;
-    moviesError: Error | null;
-  }
-export interface LayoutProps {
-  children: ReactNode;
+export type Movie = {
+  id: string
+  title: string
+  imdb_id: string
+  poster_path?: string
+  backdrop_path?: string
+  overview: string
+  release_date: string
+}
+
+export type MovieContextType = {
+  moviesData: Movie[] | undefined
+  isLoadingMovies: boolean
+  moviesError: Error | null
+}
+export type LayoutProps = {
+  children: ReactNode
 }
 
 export type MoviesContainerProps = {
-  deviceType: string;
-};
-  
- 
+  deviceType: string
+}
+
+export type FilterProps = {
+  onSort: () => void
+}
+
+export type MovieCardProps = {
+  movie: Movie
+}
+
+export type MovieModalProps = MovieCardProps & {
+  closeModal: () => void
+}
+
+export type SuccessMsgProps = {
+  success: boolean
+  message: string
+  onClose: () => void
+}

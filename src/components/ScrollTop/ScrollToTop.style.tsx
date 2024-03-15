@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ArrowButton = styled.button`
   position: fixed;
@@ -8,4 +8,4 @@ export const ArrowButton = styled.button`
   border: none;
   cursor: pointer;
   z-index: 1000;
-`;
+`

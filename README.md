@@ -1,7 +1,9 @@
 # Figma
+
 https://www.figma.com/file/ClxD8I48tjfoE2MgxhXbCg/MovieWeb?type=design&node-id=0-1&mode=design&t=VXvhNeLDEzYt2NLl-0
 
 # Project URL
+
 https://movie-list-navy.vercel.app
 
 # Getting Started with Create React App
@@ -50,4 +52,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
 # MovieList

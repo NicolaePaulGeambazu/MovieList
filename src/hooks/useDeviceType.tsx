@@ -1,42 +1,42 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
-type DeviceType = 'desktop' | 'laptop' | 'tablet' | 'mobile';
+type DeviceType = 'desktop' | 'laptop' | 'tablet' | 'mobile'
 
 const useDeviceType = (): { deviceType: DeviceType } => {
-  const [deviceType, setDeviceType] = useState<DeviceType>('desktop');
+  const [deviceType, setDeviceType] = useState<DeviceType>('desktop')
 
   useEffect(() => {
     const handleResize = (): void => {
-      const width = window.innerWidth;
+      const width = window.innerWidth
 
       if (width >= 1200) {
-        setDeviceType('desktop');
+        setDeviceType('desktop')
       } else if (width >= 992) {
-        setDeviceType('laptop');
+        setDeviceType('laptop')
       } else if (width >= 768) {
-        setDeviceType('tablet');
+        setDeviceType('tablet')
       } else {
-        setDeviceType('mobile');
+        setDeviceType('mobile')
       }
-    };
+    }
 
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: NodeJS.Timeout
 
     const debouncedHandleResize = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(handleResize, 100);
-    };
+      clearTimeout(timeoutId)
+      timeoutId = setTimeout(handleResize, 100)
+    }
 
-    window.addEventListener('resize', debouncedHandleResize);
+    window.addEventListener('resize', debouncedHandleResize)
 
-    handleResize();
+    handleResize()
 
     return () => {
-      window.removeEventListener('resize', debouncedHandleResize);
-    };
-  }, []);
+      window.removeEventListener('resize', debouncedHandleResize)
+    }
+  }, [])
 
-  return { deviceType };
-};
+  return { deviceType }
+}
 
-export default useDeviceType;
+export default useDeviceType

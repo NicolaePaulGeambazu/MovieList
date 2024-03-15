@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { IoTrashBinOutline } from "react-icons/io5";
-import { MoviesContainerProps } from "../../types";
+import styled from 'styled-components'
+import { IoTrashBinOutline } from 'react-icons/io5'
+import { MoviesContainerProps } from '../../types'
 
 export const WatchItemContainer = styled.div<MoviesContainerProps>`
   display: flex;
@@ -8,23 +8,22 @@ export const WatchItemContainer = styled.div<MoviesContainerProps>`
   padding: 10px;
   border-bottom: 1px solid #e0e0e0;
   width: ${(props) => (props.deviceType === 'mobile' ? '90%' : '20%')};
-
-`;
+`
 
 export const ImageWatchList = styled.img`
   width: 100px;
   height: auto;
   margin-right: 20px;
-`;
+`
 
 export const MovieTitle = styled.div`
   font-size: 18px;
   color: #333;
   flex-grow: 1;
-`;
+`
 
 export const BinButton = styled(IoTrashBinOutline)`
   cursor: pointer;
   font-size: 20px;
   color: #666;
-`;
+`

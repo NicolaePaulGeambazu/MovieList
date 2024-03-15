@@ -7,7 +7,7 @@ function Home() {
     <>
       <Carousel />
       <Container>
-         <MoviesList />
+        <MoviesList />
       </Container>
     </>
   )

@@ -1,22 +1,25 @@
-import React, { useState } from 'react';
-import Slider from 'react-slick';
-import { useMovieContext } from '../../context/MovieContext';
-import { Movie } from '../../types';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { CarouselContainer, Slide, SlideImage } from './Carousel.style';
+import { useState } from 'react'
+import Slider from 'react-slick'
+import { useMovieContext } from '../../context/MovieContext'
+import { Movie } from '../../types'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import { CarouselContainer, Slide, SlideImage } from './Carousel.style'
 
+const Carousel = () => {
+  const { moviesData } = useMovieContext()
+  const [currentSlide, setCurrentSlide] = useState(0)
 
-
-const Carousel: React.FC = () => {
-  const { moviesData } = useMovieContext();
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  if (!moviesData || !('results' in moviesData) || !Array.isArray(moviesData.results) || moviesData.results.length === 0) {
-    return <div>No movies found</div>;
+  if (
+    !moviesData ||
+    !('results' in moviesData) ||
+    !Array.isArray(moviesData.results) ||
+    moviesData.results.length === 0
+  ) {
+    return <div>No movies found</div>
   }
 
-  const top5Movies: Movie[] = moviesData.results.slice(0, 5);
+  const first5Movies: Movie[] = moviesData.results.slice(0, 5)
 
   const settings = {
     dots: true,
@@ -25,11 +28,12 @@ const Carousel: React.FC = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     afterChange: (index: number) => setCurrentSlide(index),
-  };
+  }
   return (
-    <CarouselContainer> 
+    <CarouselContainer>
+       
       <Slider {...settings}>
-        {top5Movies.map((movie: Movie, index: number) => (
+        {first5Movies.map((movie: Movie, index: number) => (
           <Slide key={movie.id}>
             <SlideImage
               src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
@@ -40,7 +44,7 @@ const Carousel: React.FC = () => {
         ))}
       </Slider>
     </CarouselContainer>
-  );
-};
+  )
+}
 
-export default Carousel;
+export default Carousel
