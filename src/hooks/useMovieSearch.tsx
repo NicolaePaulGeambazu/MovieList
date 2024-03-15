@@ -1,5 +1,3 @@
-// useMovieSearch.js
-
 import { useState, useEffect } from 'react';
 import { useMovieContext } from '../context/MovieContext';
 import { Movie } from '../types';

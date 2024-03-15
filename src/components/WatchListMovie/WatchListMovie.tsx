@@ -1,10 +1,10 @@
-import React from 'react';
 import { useMovieContext } from '../../context/MovieContext';
 import { BinButton, ImageWatchList, MovieTitle, WatchItemContainer } from './WatchListMovie.style';
 import useDeviceType from '../../hooks/useDeviceType';
+import { Movie } from '../../types';
 
 
-function WatchListMovie({ movie }: { movie: any }) {
+function WatchListMovie({ movie }: { movie: Movie }) {
   const { removeFromWatchlist } = useMovieContext();
   const { deviceType } = useDeviceType();
 

@@ -24,12 +24,12 @@ const useDeviceType = (): { deviceType: DeviceType } => {
 
     const debouncedHandleResize = () => {
       clearTimeout(timeoutId);
-      timeoutId = setTimeout(handleResize, 100); // Adjust the delay as needed
+      timeoutId = setTimeout(handleResize, 100);
     };
 
     window.addEventListener('resize', debouncedHandleResize);
 
-    handleResize(); // Initial call to set the initial deviceType
+    handleResize();
 
     return () => {
       window.removeEventListener('resize', debouncedHandleResize);

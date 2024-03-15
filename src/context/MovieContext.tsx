@@ -1,4 +1,4 @@
-import React, { createContext, useContext, ReactNode, useState, Dispatch, SetStateAction, useMemo, useCallback } from 'react';
+import { createContext, useContext, ReactNode, useState, Dispatch, SetStateAction, useMemo, useCallback } from 'react';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 import { Movie } from '../types';
@@ -18,11 +18,11 @@ const MovieContext = createContext<MovieContextType>({
 const MOVIES_LIST_URL = 'https://api.themoviedb.org/3/discover/movie?page=1';
 const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MTgwNTA4NzI2MDIwYTA3ODdlNjRhYjEzNDFmZGRjZiIsInN1YiI6IjY1ZjBlYWI0MGU0ZmM4MDE4NmNhM2IzMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WHmVe_rH15rgUZJP1A_Ih6536sbPI_iXDlEXOi1ZQ-g';
 
-interface MovieProviderProps {
+type MovieProviderProps = {
   children: ReactNode;
 }
 
-interface MovieContextType {
+type MovieContextType = {
   moviesData: Movie[] | undefined;
   isLoadingMovies: boolean;
   moviesError: Error | null;
@@ -38,7 +38,7 @@ export const useMovieContext = () => useContext(MovieContext);
 export const MovieProvider = ({ children }: MovieProviderProps) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [watchlist, setWatchlist] = useState<Movie[]>([]);
-  const [successMsg, setSuccessMsg] = useState<{ success: boolean; message: string } | null>(null); // State to control SuccessMsg visibility
+  const [successMsg, setSuccessMsg] = useState<{ success: boolean; message: string } | null>(null);
 
   const { data: moviesData, isLoading: isLoadingMovies, error: moviesError } = useQuery<Movie[], Error>('movies', async () => {
     const response = await axios.get<Movie[]>(MOVIES_LIST_URL, {
@@ -68,7 +68,7 @@ export const MovieProvider = ({ children }: MovieProviderProps) => {
   }, [watchlist]);
 
   const handleCloseMsg = () => {
-    setSuccessMsg(null); // Close the SuccessMsg
+    setSuccessMsg(null);
   };
 
   const contextValue = useMemo(() => ({
