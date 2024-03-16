@@ -46,7 +46,7 @@ type MovieContextType = {
 export const useMovieContext = () => useContext(MovieContext)
 
 export const MovieProvider = ({ children }: MovieProviderProps) => {
-  const [searchQuery, setSearchQuery] = useState('')
+  const [searchQuery, setSearchQuery] = useState<string>('')
   const [watchlist, setWatchlist] = useState<Movie[]>([])
   const [successMsg, setSuccessMsg] = useState<{
     success: boolean

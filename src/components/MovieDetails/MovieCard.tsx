@@ -7,13 +7,13 @@ import {
 } from './MovieCard.style'
 import { useMovieContext } from '../../context/MovieContext'
 import MovieModal from '../MovieModal/MovieModal'
-import { MovieCardProps } from '../../types'
+import { Movie, MovieCardProps } from '../../types'
 
 const MovieCard = ({ movie }: MovieCardProps) => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
   const { addToWatchlist } = useMovieContext()
 
-  const handleAddToWatchlist = (movie: any) => {
+  const handleAddToWatchlist = (movie: Movie) => {
     addToWatchlist(movie)
   }
 

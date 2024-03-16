@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import  matchMediaMock  from 'jest-matchmedia-mock';
 import Slider from 'react-slick'
 import { useMovieContext } from '../../context/MovieContext'
 import { Movie } from '../../types'
@@ -8,7 +9,7 @@ import { CarouselContainer, Slide, SlideImage } from './Carousel.style'
 
 const Carousel = () => {
   const { moviesData } = useMovieContext()
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState<number>(0)
 
   if (
     !moviesData ||

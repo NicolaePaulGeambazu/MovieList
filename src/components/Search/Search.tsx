@@ -4,7 +4,7 @@ import { SearchButton, SearchField, SearchContainer } from './Search.style'
 
 const Search = () => {
   const { setSearchQuery } = useMovieContext()
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState<string>('')
 
   const handleSearch = () => {
     setSearchQuery(query)

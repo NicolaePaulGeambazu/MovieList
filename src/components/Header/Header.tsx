@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import {
   HeaderContainer,
   HeaderText,
@@ -10,21 +10,28 @@ import { useNavigate } from 'react-router-dom'
 import useDeviceType from '../../hooks/useDeviceType'
 
 const Header = () => {
-  const [openMenu, setOpenMenu] = useState(false)
+  const [openMenu, setOpenMenu] = useState<boolean>(false)
   const navigateTo = useNavigate()
   const { deviceType } = useDeviceType()
   return (
     <HeaderContainer>
       <HeaderText>Movies List</HeaderText>
-      <Menu onClick={() => setOpenMenu(!openMenu)}>Menu</Menu>
+      <Menu onClick={() => setOpenMenu(!openMenu)} data-testid="menu-button">
+        Menu
+      </Menu>
       {openMenu && (
         <MenuBox>
-          <MenuButton deviceType={deviceType} onClick={() => navigateTo('/')}>
+          <MenuButton
+            deviceType={deviceType}
+            onClick={() => navigateTo('/')}
+            data-testid="home-button"
+          >
             Home
           </MenuButton>
           <MenuButton
             deviceType={deviceType}
             onClick={() => navigateTo('/watchlist')}
+            data-testid="watchlist-button"
           >
             Watch List
           </MenuButton>

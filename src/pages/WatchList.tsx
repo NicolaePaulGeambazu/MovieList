@@ -16,4 +16,4 @@ function WatchList() {
   )
 }
 
-export default WatchList
+export default WatchList;

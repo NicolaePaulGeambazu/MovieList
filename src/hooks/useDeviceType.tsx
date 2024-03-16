@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
+import { DeviceType } from '../types'
 
-type DeviceType = 'desktop' | 'laptop' | 'tablet' | 'mobile'
 
 const useDeviceType = (): { deviceType: DeviceType } => {
   const [deviceType, setDeviceType] = useState<DeviceType>('desktop')

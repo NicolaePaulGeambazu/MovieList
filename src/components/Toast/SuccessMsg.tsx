@@ -3,7 +3,7 @@ import { CloseButton, ToastContainer, ToastMessage } from './SuccessMsg.style'
 import { SuccessMsgProps } from '../../types'
 
 const SuccessMsg = ({ success, message, onClose }: SuccessMsgProps) => {
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState<boolean>(true)
 
   useEffect(() => {
     const timer = setTimeout(() => {

@@ -43,3 +43,5 @@ export type SuccessMsgProps = {
   message: string
   onClose: () => void
 }
+
+export type DeviceType = 'desktop' | 'laptop' | 'tablet' | 'mobile'

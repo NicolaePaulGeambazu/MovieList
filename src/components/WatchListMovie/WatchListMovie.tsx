@@ -8,7 +8,7 @@ import {
 import useDeviceType from '../../hooks/useDeviceType'
 import { Movie } from '../../types'
 
-function WatchListMovie({ movie }: { movie: Movie }) {
+const WatchListMovie = ({ movie }: { movie: Movie }) => {
   const { removeFromWatchlist } = useMovieContext()
   const { deviceType } = useDeviceType()
 
