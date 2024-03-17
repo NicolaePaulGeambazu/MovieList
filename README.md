@@ -8,15 +8,22 @@ with movies. In order to run this project localy will need an API key what canno
 from TheMovieDB account page and JWT will be valid for 1 hour
 
 ## Features
-   -Carousel: In this website I have choosed to create an carousel in order for User to see the first 5 movie posters and
-   to be able to scroll between them
-   -Search : I have implemented an search bar what will give to the user a better experience in order to find the movie wanted
-   -Sort: Sort functionality will order the movie list in order alphabetical.
-   -ScrollToTop: Because user have to scroll to bottom in order to see the last movie card, I have implemented an button what will redirect user to top of the page at the convenient time.
-   -Movie Modal: When an user looking to see what will be the movie about or when was release, user can easy click on movie card
-   and an modal will show up. In this modal user will can see a description and an release of the picked movie.
-   -Watch List: If the user decide to add an movie to watch list or just to keep there for feature reference, in top right corner of each card will be a start what will add the movie to an watch list. User can navigate to Watch List by going to burger menu and choose Watch List page, user will be redirected to the wanted page were will can see the list created by him also have the posibility to take off list an movie by clicking on bin button.
-   -Messages: For UI/UX purpose I have added an message with Success/Fail message in bottom right corner when user try to add/remove an movie. In case if user try to add same movie twice, an message will tell them that the movie was already added to the watch list and is not needed to add again.
+- Carousel: Implemented a carousel to display the first 5 movie posters, allowing users to scroll between them for easy viewing.
+  
+- Search: Included a search bar to enhance user experience, enabling users to find desired movies quickly and efficiently.
+
+- Sort: Implemented sort functionality to order the movie list alphabetically, providing users with organized and easy-to-navigate content.
+
+- Movie Card: Added hover effects to movie cards to indicate to users that they are clickable, enhancing interactivity and user engagement.
+
+- ScrollToTop: Implemented a button to facilitate user navigation by allowing them to scroll to the top of the page with ease, enhancing overall user experience.
+
+- Movie Modal: Created a modal to display additional information about a selected movie, such as its description and release date, providing users with comprehensive details about the movie.
+
+- Watch List: Added a star icon to movie cards to enable users to add movies to their watch list. Users can access their watch list by navigating to the burger menu and selecting the Watch List page. They can view their curated list and remove movies by clicking on the bin button.
+
+- Messages: Implemented messages for success and failure notifications, displayed in the bottom right corner of the screen. Messages inform users about actions such as adding or removing a movie from their watch list. In case a user tries to add the same movie twice, a message notifies them that the movie is already in their watch list, preventing duplicate entries.
+
 
 ## Available Scripts
 
@@ -37,3 +44,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+### `npm run test`
+
+

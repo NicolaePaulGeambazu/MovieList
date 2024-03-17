@@ -7,7 +7,8 @@ const Search = () => {
   const [query, setQuery] = useState<string>('')
 
   const handleSearch = () => {
-    setSearchQuery(query)
+    //cover edge case when user may have an space in search field.
+    setSearchQuery(query.trim())
   }
 
   return (
