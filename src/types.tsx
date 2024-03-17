@@ -1,9 +1,9 @@
 import { ReactNode } from 'react'
-export type MovieDetailsProps = {
+export interface MovieDetailsProps {
   id: string
 }
 
-export type Movie = {
+export interface Movie {
   id: string
   title: string
   imdb_id: string
@@ -13,24 +13,24 @@ export type Movie = {
   release_date: string
 }
 
-export type MovieContextType = {
+export interface MovieContextType {
   moviesData: Movie[] | undefined
   isLoadingMovies: boolean
   moviesError: Error | null
 }
-export type LayoutProps = {
+export interface LayoutProps {
   children: ReactNode
 }
 
-export type MoviesContainerProps = {
+export interface MoviesContainerProps {
   deviceType: string
 }
 
-export type FilterProps = {
+export interface FilterProps {
   onSort: () => void
 }
 
-export type MovieCardProps = {
+export interface MovieCardProps {
   movie: Movie
 }
 
@@ -38,7 +38,7 @@ export type MovieModalProps = MovieCardProps & {
   closeModal: () => void
 }
 
-export type SuccessMsgProps = {
+export interface SuccessMsgProps {
   success: boolean
   message: string
   onClose: () => void

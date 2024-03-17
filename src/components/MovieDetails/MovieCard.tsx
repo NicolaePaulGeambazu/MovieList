@@ -3,7 +3,7 @@ import {
   ButonFav,
   CardContainer,
   CardImage,
-  IconContainer,
+  IconContainer
 } from './MovieCard.style'
 import { useMovieContext } from '../../context/MovieContext'
 import MovieModal from '../MovieModal/MovieModal'
@@ -21,7 +21,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
     <>
       <CardContainer onClick={() => setIsModalOpen(true)}>
         <IconContainer
-          onClick={(e) => {
+          onClick={e => {
             e.stopPropagation()
             handleAddToWatchlist(movie)
           }}

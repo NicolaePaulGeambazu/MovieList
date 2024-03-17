@@ -1,9 +1,10 @@
+import React from 'react'
 import { useMovieContext } from '../../context/MovieContext'
 import {
   BinButton,
   ImageWatchList,
   MovieTitle,
-  WatchItemContainer,
+  WatchItemContainer
 } from './WatchListMovie.style'
 import useDeviceType from '../../hooks/useDeviceType'
 import { Movie } from '../../types'

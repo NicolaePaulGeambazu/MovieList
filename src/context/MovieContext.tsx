@@ -1,4 +1,4 @@
-import {
+import React, {
   createContext,
   useContext,
   ReactNode,
@@ -6,7 +6,7 @@ import {
   Dispatch,
   SetStateAction,
   useMemo,
-  useCallback,
+  useCallback
 } from 'react'
 import { useQuery } from 'react-query'
 import axios from 'axios'
@@ -19,17 +19,17 @@ const MovieContext = createContext<MovieContextType>({
   isLoadingMovies: false,
   moviesError: null,
   searchQuery: '',
-  setSearchQuery: () => {},
-  addToWatchlist: (movie: Movie) => {},
+  setSearchQuery: () => undefined,
+  addToWatchlist: () => undefined,
   watchlist: [],
-  removeFromWatchlist: (movie: Movie) => {},
+  removeFromWatchlist: () => undefined
 })
 
-type MovieProviderProps = {
+interface MovieProviderProps {
   children: ReactNode
 }
 
-type MovieContextType = {
+interface MovieContextType {
   moviesData: Movie[] | undefined
   isLoadingMovies: boolean
   moviesError: Error | null
@@ -53,42 +53,33 @@ export const MovieProvider = ({ children }: MovieProviderProps) => {
   const {
     data: moviesData,
     isLoading: isLoadingMovies,
-    error: moviesError,
+    error: moviesError
   } = useQuery<Movie[], Error>('movies', async () => {
     const response = await axios.get<Movie[]>(MOVIES_LIST_URL, {
       headers: {
         Authorization: `Bearer ${API_KEY}`,
-        Accept: 'application/json',
-      },
+        Accept: 'application/json'
+      }
     })
     return response.data
   })
 
-  const addToWatchlist = useCallback(
-    (movie: Movie) => {
-      const movieExists = watchlist.some((item) => item.id === movie.id)
-
-      if (!movieExists) {
-        setWatchlist((prevWatchlist) => [...prevWatchlist, movie])
-        setSuccessMsg({ success: true, message: 'Movie added successfully' })
-      } else {
-        setSuccessMsg({
-          success: false,
-          message: 'Movie already exists in watchlist',
-        })
-      }
-    },
-    [watchlist],
-  )
-
-  const removeFromWatchlist = useCallback(
-    (movie: Movie) => {
-      const updatedWatchlist = watchlist.filter((item) => item.id !== movie.id)
-      setWatchlist(updatedWatchlist)
-      setSuccessMsg({ success: true, message: 'Movie removed successfully' })
-    },
-    [watchlist],
-  )
+  const addToWatchlist = useCallback((movie: Movie) => {
+    const movieExists = watchlist.some(item => item.id === movie.id);
+  
+    if (!movieExists) {
+      setWatchlist(prevWatchlist => [...prevWatchlist, movie]);
+      setSuccessMsg({ success: true, message: 'Movie added successfully' });
+    } else {
+      setSuccessMsg({ success: false, message: 'Movie already exists in watchlist' });
+    }
+  }, [watchlist]);
+  
+  const removeFromWatchlist = useCallback((movie: Movie) => {
+    const updatedWatchlist = watchlist.filter(item => item.id !== movie.id);
+    setWatchlist(updatedWatchlist);
+    setSuccessMsg({ success: true, message: 'Movie removed successfully' });
+  }, [watchlist]);
 
   const handleCloseMsg = () => {
     setSuccessMsg(null)
@@ -103,7 +94,7 @@ export const MovieProvider = ({ children }: MovieProviderProps) => {
       setSearchQuery,
       watchlist,
       addToWatchlist,
-      removeFromWatchlist,
+      removeFromWatchlist
     }),
     [
       moviesData,
@@ -112,8 +103,8 @@ export const MovieProvider = ({ children }: MovieProviderProps) => {
       searchQuery,
       watchlist,
       removeFromWatchlist,
-      addToWatchlist,
-    ],
+      addToWatchlist
+    ]
   )
 
   return (

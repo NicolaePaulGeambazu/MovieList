@@ -5,7 +5,7 @@ export const ToastContainer = styled.div<{ success: boolean }>`
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: ${(props) => (props.success ? 'green' : 'red')};
+  background-color: ${props => (props.success ? 'green' : 'red')};
   color: white;
   padding: 10px 20px;
   border-radius: 5px;

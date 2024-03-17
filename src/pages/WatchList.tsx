@@ -1,9 +1,10 @@
+import React from 'react'
 import { useMovieContext } from '../context/MovieContext'
 import WatchListMovie from '../components/WatchListMovie/WatchListMovie'
 import { Heading, WatchListContainer } from './Pages.style'
 import useDeviceType from '../hooks/useDeviceType'
 
-function WatchList() {
+function WatchList () {
   const { watchlist } = useMovieContext()
   const { deviceType } = useDeviceType()
   return (
@@ -16,4 +17,4 @@ function WatchList() {
   )
 }
 
-export default WatchList;
+export default WatchList

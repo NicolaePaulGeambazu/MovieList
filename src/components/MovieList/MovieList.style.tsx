@@ -27,7 +27,7 @@ export const Header = styled.div<MoviesContainerProps>`
   align-items: center;
   margin-bottom: 20px;
 
-  ${(props) =>
+  ${props =>
     (props.deviceType === 'mobile' || props.deviceType === 'tablet') &&
     `
     margin-top: 20px;

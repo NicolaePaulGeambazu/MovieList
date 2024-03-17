@@ -8,19 +8,19 @@ const useMovieSearch = (query: string) => {
 
   useEffect(() => {
     if (
-      isLoadingMovies ||
-      moviesError ||
-      !moviesData ||
-      !('results' in moviesData) ||
-      !Array.isArray(moviesData.results)
+      isLoadingMovies ??
+      moviesError ??
+      !moviesData ??
+      !('results' in moviesData) ??
+      !Array.isArray(moviesData?.results)
     ) {
       setFilteredMovies([])
       return
     }
 
     const movies: Movie[] = moviesData.results
-    const filtered = movies.filter((movie) =>
-      movie.title.toLowerCase().includes(query.toLowerCase()),
+    const filtered = movies.filter(movie =>
+      movie.title.toLowerCase().includes(query.toLowerCase())
     )
     setFilteredMovies(filtered)
   }, [query, isLoadingMovies, moviesError, moviesData])

@@ -5,7 +5,7 @@ export const WatchListContainer = styled.div<MoviesContainerProps>`
   width: 80%;
   display: grid;
   margin: 20px auto;
-  grid-template-columns: ${(props) =>
+  grid-template-columns: ${props =>
     props.deviceType === 'mobile' || props.deviceType === 'tablet'
       ? '1fr'
       : 'repeat(3, 1fr)'};

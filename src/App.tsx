@@ -11,8 +11,8 @@ const App: React.FC = () => {
       <Layout>
         <MovieProvider>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/watchlist" element={<WatchList />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/watchlist' element={<WatchList />} />
           </Routes>
         </MovieProvider>
       </Layout>

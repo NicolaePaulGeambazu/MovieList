@@ -4,7 +4,7 @@ import {
   HeaderText,
   Menu,
   MenuBox,
-  MenuButton,
+  MenuButton
 } from './Header.style'
 import { useNavigate } from 'react-router-dom'
 import useDeviceType from '../../hooks/useDeviceType'
@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderText>Movies List</HeaderText>
-      <Menu onClick={() => setOpenMenu(!openMenu)} data-testid="menu-button">
+      <Menu onClick={() => setOpenMenu(!openMenu)} data-testid='menu-button'>
         Menu
       </Menu>
       {openMenu && (
@@ -24,14 +24,14 @@ const Header = () => {
           <MenuButton
             deviceType={deviceType}
             onClick={() => navigateTo('/')}
-            data-testid="home-button"
+            data-testid='home-button'
           >
             Home
           </MenuButton>
           <MenuButton
             deviceType={deviceType}
             onClick={() => navigateTo('/watchlist')}
-            data-testid="watchlist-button"
+            data-testid='watchlist-button'
           >
             Watch List
           </MenuButton>

@@ -9,7 +9,6 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   background: #3242a8;
   height: 50px;
-  width: 100%;
 `
 
 export const Menu = styled(RxHamburgerMenu)`
@@ -38,7 +37,7 @@ export const MenuBox = styled.div`
 
 export const MenuButton = styled.button<MoviesContainerProps>`
   display: flex;
-  width: ${(props) => (props.deviceType === 'mobile' ? '50%' : '20%')};
+  width: ${props => (props.deviceType === 'mobile' ? '50%' : '20%')};
   color: #fff;
   margin: auto;
   justify-content: center;

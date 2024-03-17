@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useMovieContext } from '../../context/MovieContext'
 import { SearchButton, SearchField, SearchContainer } from './Search.style'
 
@@ -12,7 +12,7 @@ const Search = () => {
 
   return (
     <SearchContainer>
-      <SearchField type="text" onChange={(e) => setQuery(e.target.value)} />
+      <SearchField type='text' onChange={e => setQuery(e.target.value)} />
       <SearchButton onClick={handleSearch} />
     </SearchContainer>
   )

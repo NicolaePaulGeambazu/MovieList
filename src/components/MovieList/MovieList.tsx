@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useMovieContext } from '../../context/MovieContext'
 import { Movie } from '../../types'
 import MovieCard from '../MovieDetails/MovieCard'
@@ -9,7 +9,7 @@ import {
   Header,
   MoviesContainer,
   NoMoviesMessage,
-  UtilityContainerBox,
+  UtilityContainerBox
 } from './MovieList.style'
 import useDeviceType from '../../hooks/useDeviceType'
 
@@ -29,8 +29,8 @@ const MoviesList = () => {
       let filteredMovies = allMovies
 
       if (searchQuery) {
-        filteredMovies = allMovies.filter((movie) =>
-          movie.title.toLowerCase().includes(searchQuery.toLowerCase()),
+        filteredMovies = allMovies.filter(movie =>
+          movie.title.toLowerCase().includes(searchQuery.toLowerCase())
         )
       }
 
@@ -40,7 +40,7 @@ const MoviesList = () => {
 
   const sortAlphabetically = () => {
     const sortedMovies = [...movies].sort((a, b) =>
-      a.title.localeCompare(b.title),
+      a.title.localeCompare(b.title)
     )
     setMovies(sortedMovies)
   }

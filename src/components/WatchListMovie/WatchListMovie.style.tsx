@@ -7,7 +7,7 @@ export const WatchItemContainer = styled.div<MoviesContainerProps>`
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #e0e0e0;
-  width: ${(props) => (props.deviceType === 'mobile' ? '90%' : '20%')};
+  width: ${props => (props.deviceType === 'mobile' ? '90%' : '20%')};
 `
 
 export const ImageWatchList = styled.img`

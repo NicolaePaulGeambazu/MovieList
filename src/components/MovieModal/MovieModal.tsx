@@ -1,27 +1,28 @@
+import React from 'react'
 import {
   CloseButton,
   ContentContainer,
   Image,
   ModalBackdrop,
-  ModalContent,
+  ModalContent
 } from './MovieMolda.style'
 import useDeviceType from '../../hooks/useDeviceType'
 import { MovieModalProps } from '../../types'
 
 const MovieModal = ({ movie, closeModal }: MovieModalProps) => {
-  const { deviceType } = useDeviceType();
+  const { deviceType } = useDeviceType()
 
   const formatDate = (dateString: string): string => {
-    const date = new Date(dateString);
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
+    const date = new Date(dateString)
+    const day = date.getDate()
+    const month = date.getMonth() + 1
+    const year = date.getFullYear()
+    return `${day}/${month}/${year}`
   }
 
   return (
     <ModalBackdrop onClick={closeModal}>
-      <ModalContent onClick={(e) => e.stopPropagation()}>
+      <ModalContent onClick={e => e.stopPropagation()}>
         <ContentContainer deviceType={deviceType}>
           <CloseButton onClick={closeModal} />
           <Image
