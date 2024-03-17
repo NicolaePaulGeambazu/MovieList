@@ -1,14 +1,10 @@
 import styled from 'styled-components'
-import { MoviesContainerProps } from '../types'
 
-export const WatchListContainer = styled.div<MoviesContainerProps>`
+export const WatchListContainer = styled.div`
   width: 80%;
   display: grid;
   margin: 20px auto;
-  grid-template-columns: ${props =>
-    props.deviceType === 'mobile' || props.deviceType === 'tablet'
-      ? '1fr'
-      : 'repeat(3, 1fr)'};
+  grid-template-columns: 1fr;
 `
 
 export const Heading = styled.h1`

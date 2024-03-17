@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 import { IoTrashBinOutline } from 'react-icons/io5'
-import { MoviesContainerProps } from '../../types'
 
-export const WatchItemContainer = styled.div<MoviesContainerProps>`
+export const WatchItemContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #e0e0e0;
-  width: ${props => (props.deviceType === 'mobile' ? '90%' : '20%')};
+  width: 90%;
 `
 
 export const ImageWatchList = styled.img`
