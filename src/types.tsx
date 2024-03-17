@@ -23,7 +23,7 @@ export interface LayoutProps {
 }
 
 export interface MoviesContainerProps {
-  deviceType: string
+  devicetype: string
 }
 
 export interface FilterProps {

@@ -26,15 +26,15 @@ export const ModalContent = styled.div`
 `
 
 export const Image = styled.img<MoviesContainerProps>`
-  width: ${props => (props.deviceType === 'mobile' ? '100%' : '30%')};
-  margin-top: ${props => (props.deviceType === 'mobile' ? '20px' : '0')};
+  width: ${props => (props.devicetype === 'mobile' ? '100%' : '30%')};
+  margin-top: ${props => (props.devicetype === 'mobile' ? '20px' : '0')};
 `
 
 export const ContentContainer = styled.div<MoviesContainerProps>`
   display: flex;
   gap: 20px;
   flex-direction: ${props =>
-    props.deviceType === 'mobile' ? 'column' : 'row'};
+    props.devicetype === 'mobile' ? 'column' : 'row'};
 `
 
 export const CloseButton = styled(IoMdClose)`

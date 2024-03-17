@@ -23,10 +23,10 @@ const MovieModal = ({ movie, closeModal }: MovieModalProps) => {
   return (
     <ModalBackdrop onClick={closeModal}>
       <ModalContent onClick={e => e.stopPropagation()}>
-        <ContentContainer deviceType={deviceType}>
+        <ContentContainer devicetype={deviceType}>
           <CloseButton onClick={closeModal} />
           <Image
-            deviceType={deviceType}
+            devicetype={deviceType}
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt={movie.title}
           />

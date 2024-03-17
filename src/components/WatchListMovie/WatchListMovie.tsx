@@ -6,7 +6,6 @@ import {
   MovieTitle,
   WatchItemContainer
 } from './WatchListMovie.style'
-import useDeviceType from '../../hooks/useDeviceType'
 import { Movie } from '../../types'
 
 const WatchListMovie = ({ movie }: { movie: Movie }) => {

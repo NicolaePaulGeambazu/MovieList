@@ -12,3 +12,9 @@ export const Heading = styled.h1`
   color: #333;
   margin-bottom: 20px;
 `
+
+export const EmptyWatchListMessage = styled.p`
+  color: #555;
+  font-style: italic;
+  text-align: center;
+`;

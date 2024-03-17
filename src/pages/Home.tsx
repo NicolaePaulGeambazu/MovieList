@@ -3,7 +3,7 @@ import Carousel from '../components/Carousel/Carousel'
 import { Container } from '../GlobalStyle.style'
 import MoviesList from '../components/MovieList/MovieList'
 
-function Home () {
+const Home = () => {
   return (
     <>
       <Carousel />

@@ -28,7 +28,7 @@ export const Header = styled.div<MoviesContainerProps>`
   margin-bottom: 20px;
 
   ${props =>
-    (props.deviceType === 'mobile' || props.deviceType === 'tablet') &&
+    (props.devicetype === 'mobile' || props.devicetype === 'tablet') &&
     `
     margin-top: 20px;
     margin-bottom: 0;
@@ -39,12 +39,12 @@ export const Header = styled.div<MoviesContainerProps>`
 export const MoviesContainer = styled.div<MoviesContainerProps>`
   display: grid;
   grid-template-columns: ${
-    ({ deviceType }) =>
-      deviceType === 'desktop'
+    ({ devicetype }) =>
+      devicetype === 'desktop'
         ? 'repeat(3, 1fr)' // for desktop
-        : deviceType === 'laptop'
+        : devicetype === 'laptop'
           ? 'repeat(2, 1fr)' // for laptop
-          : deviceType === 'tablet'
+          : devicetype === 'tablet'
             ? 'repeat(2, 1fr)' // for tablet
             : 'repeat(1, 1fr)' // for mobile
   };

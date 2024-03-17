@@ -38,7 +38,7 @@ const Carousel = () => {
             <SlideImage
               src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
               alt={movie.title}
-              isSelected={index === currentSlide}
+              $isselected={index === currentSlide}
             />
           </Slide>
         ))}

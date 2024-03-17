@@ -47,7 +47,7 @@ const MoviesList = () => {
 
   return (
     <Container>
-      <Header deviceType={deviceType}>
+      <Header devicetype={deviceType}>
         <UtilityContainerBox>
           <Search />
           <Filter onSort={sortAlphabetically} />
@@ -59,7 +59,7 @@ const MoviesList = () => {
         <NoMoviesMessage>No movies found</NoMoviesMessage>
       )}
       {movies.length > 0 && (
-        <MoviesContainer deviceType={deviceType}>
+        <MoviesContainer devicetype={deviceType}>
           {movies.map((movie: Movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}

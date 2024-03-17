@@ -15,7 +15,7 @@ const SuccessMsg = ({ success, message, onClose }: SuccessMsgProps) => {
   })
 
   return visible ? (
-    <ToastContainer success={success}>
+    <ToastContainer $success={success}>
       <ToastMessage>{message}</ToastMessage>
       <CloseButton onClick={onClose} />
     </ToastContainer>

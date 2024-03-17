@@ -22,14 +22,14 @@ const Header = () => {
       {openMenu && (
         <MenuBox>
           <MenuButton
-            deviceType={deviceType}
+            devicetype={deviceType}
             onClick={() => navigateTo('/')}
             data-testid='home-button'
           >
             Home
           </MenuButton>
           <MenuButton
-            deviceType={deviceType}
+            devicetype={deviceType}
             onClick={() => navigateTo('/watchlist')}
             data-testid='watchlist-button'
           >

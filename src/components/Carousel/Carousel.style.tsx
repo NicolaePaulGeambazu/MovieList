@@ -9,8 +9,8 @@ export const Slide = styled.div`
   padding: 0 10px;
 `
 
-export const SlideImage = styled.img<{ isSelected: boolean }>`
+export const SlideImage = styled.img<{ $isselected: boolean}>`
   width: 100%;
   height: auto;
-  ${({ isSelected }) => !isSelected && 'pointer-events: none;'};
+  ${({ $isselected }) => $isselected ? 'pointer-events: auto;' : 'pointer-events: none;'};
 `

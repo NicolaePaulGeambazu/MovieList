@@ -37,7 +37,7 @@ export const MenuBox = styled.div`
 
 export const MenuButton = styled.button<MoviesContainerProps>`
   display: flex;
-  width: ${props => (props.deviceType === 'mobile' ? '50%' : '20%')};
+  width: ${props => (props.devicetype === 'mobile' ? '50%' : '20%')};
   color: #fff;
   margin: auto;
   justify-content: center;

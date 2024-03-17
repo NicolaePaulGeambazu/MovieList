@@ -1,16 +1,21 @@
 import React from 'react'
 import { useMovieContext } from '../context/MovieContext'
 import WatchListMovie from '../components/WatchListMovie/WatchListMovie'
-import { Heading, WatchListContainer } from './Pages.style'
+import { EmptyWatchListMessage, Heading, WatchListContainer } from './Pages.style'
 
-function WatchList () {
+const WatchList = () => {
   const { watchlist } = useMovieContext()
+
   return (
     <WatchListContainer>
       <Heading>Watch List:</Heading>
-      {watchlist.map((movie, index) => (
-        <WatchListMovie key={index} movie={movie} />
-      ))}
+      {watchlist.length === 0 ? (
+        <EmptyWatchListMessage>No movies added to watch list</EmptyWatchListMessage>
+      ) : (
+        watchlist.map((movie, index) => (
+          <WatchListMovie key={index} movie={movie} />
+        ))
+      )}
     </WatchListContainer>
   )
 }
